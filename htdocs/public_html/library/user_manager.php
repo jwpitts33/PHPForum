@@ -2,6 +2,11 @@
 
 <?php
 
+<<<<<<< Updated upstream
+=======
+  include_once "library/db_connect.php";
+
+>>>>>>> Stashed changes
   function login($username, $password, $conn) {
 
     $stmt = $conn->prepare("SELECT EMAIL, PASSWORD FROM USERS WHERE USERNAME = ?");
@@ -11,6 +16,13 @@
     $stmt->bind_result($email, $actual_password);
     $stmt->fetch();
 
+<<<<<<< Updated upstream
+=======
+    if (empty($actual_password) || empty($email)) {
+      return false;
+    }
+
+>>>>>>> Stashed changes
     if ($password == $actual_password) {
       $_SESSION["user"] = $username;
       $_SESSION["email"] = $email;
