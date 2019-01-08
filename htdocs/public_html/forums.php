@@ -3,10 +3,11 @@
 
 <?php
   session_start();
+  include "library/db_connect.php";
   include_once "library/user_manager.php";
   include_once "library/forums_manager.php";
 
-  $forums = getForumsList();
+  $forums = getForumsList($conn);
 ?>
 
 <html>
