@@ -1,27 +1,3 @@
-<<<<<<< Updated upstream
- 
-<?php
-
-  if (logged_in() == true) {
-    echo "
-    <a href='home.php'>Homepage</a><br>
-
-    Hello, " . $_SESSION["user"] . "<br>
-
-    <a href='logout.php'>Log Out</a><br>
-    " ;
-
-  } else {
-    echo "
-    <a href='home.php'>Homepage</a><br>
-
-    <a href='login.php'>Login</a><br>
-
-    <a href='logout.php'>Log Out</a><br>
-    " ;
-  } 
-?>
-=======
 
 
     <nav id="logged_in" class='navbar navbar-expand-lg navbar-dark bg-dark'>
@@ -61,7 +37,7 @@
 
 <script>
   var logged_in = <?php echo json_encode(logged_in()); ?>;
-  var user = <?php echo json_encode($_SESSION["user"]); ?>;
+
 
   if (logged_in) {
     document.getElementById("logged_out").style.display = "none";
@@ -74,4 +50,3 @@
 
 </script>
 
->>>>>>> Stashed changes

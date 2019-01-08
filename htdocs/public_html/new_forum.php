@@ -3,11 +3,12 @@
 
 <?php
   session_start();
+  include "library/db_connect.php";
   include_once "library/user_manager.php";
   include_once "library/forums_manager.php";
 
   if (isset($_GET["forumName"])) {
-    $success = new_forum($_GET["forumName"]);
+    $success = new_forum($_GET["forumName"], $conn);
 
     if ($success) {
       header("Location: " . URI . "/public_html/forums.php");
